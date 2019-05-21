@@ -60,32 +60,6 @@ endif(APPLE)
 include(GrMiscUtils)
 GR_LIBRARY_FOO(gnuradio-grnet RUNTIME_COMPONENT "grnet_runtime" DEVEL_COMPONENT "grnet_devel")
 
-########################################################################
-# Build and register unit test
-########################################################################
-include(GrTest)
-
-include_directories(${CPPUNIT_INCLUDE_DIRS})
-
-list(APPEND test_grnet_sources
-    ${CMAKE_CURRENT_SOURCE_DIR}/test_grnet.cc
-    ${CMAKE_CURRENT_SOURCE_DIR}/qa_grnet.cc
-    ${CMAKE_CURRENT_SOURCE_DIR}/qa_tcp_sink.cc
-)
-
-add_executable(test-grnet ${test_grnet_sources})
-
-target_link_libraries(
-  test-grnet
-  ${GNURADIO_RUNTIME_LIBRARIES}
-  ${Boost_LIBRARIES}
-  ${CPPUNIT_LIBRARIES}
-  gnuradio-grnet
-  thrift
-  volk
-)
-
-GR_ADD_TEST(test_grnet test-grnet)
 
 ########################################################################
 # Build test-netsink
