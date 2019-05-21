@@ -131,9 +131,12 @@ add_custom_target(uninstall
     ${CMAKE_COMMAND} -P ${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake
 )
 
+
 ########################################################################
 # Add subdirectories
 ########################################################################
+
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
 add_subdirectory(include/grnet)
 add_subdirectory(lib)
 add_subdirectory(swig)
