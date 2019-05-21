@@ -58,7 +58,7 @@ if(CMAKE_COMPILER_IS_GNUCXX AND NOT WIN32)
 find_package(Gnuradio "3.8" REQUIRED)
 include(GrVersion)
 
-message(STATUS "GNURADIO LIBRARIES = " ${GNURADIO_ALL_LIBRARIES}"
+message(STATUS "GNURADIO LIBRARIES = " ${GNURADIO_ALL_LIBRARIES})
 ########################################################################
 # Install directories
 ########################################################################
