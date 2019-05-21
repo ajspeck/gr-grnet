@@ -54,7 +54,8 @@ if(CMAKE_COMPILER_IS_GNUCXX AND NOT WIN32)
     #http://gcc.gnu.org/wiki/Visibility
     add_definitions(-fvisibility=hidden)
   endif()
-
+  
+set(GR_REQUIRED_COMPONENTS RUNTIME BLOCKS FILTER DIGITAL ANALOG)
 find_package(Gnuradio "3.8" REQUIRED)
 include(GrVersion)
 
